@@ -1,23 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Components
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Projects from './components/Projects/Projects';
+import Resume from './components/Resume/Resume';
+import NotFound from './components/NotFound';
 
 function App() {
+
+  const navStyle = {
+    color: 'white'
+  };
+
+
+
   return (
     <div className="App">
+      {/* Header */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* Your header content goes here */}
       </header>
+
+      {/* Routing */}
+      <div className="App-body">
+        <Router>
+          <div className="App-routes">
+            <Routes>
+              <Route path="/" exact component={Home}>
+              </Route>
+              <Route path="/about" component={About}>
+              </Route>
+              <Route path="/projects" component={Projects}>
+              </Route>
+              <Route path="/resume" component={Resume}>
+              </Route>
+              <Route path="/notfound" component={NotFound}>
+              </Route>
+            </Routes>
+          </div>
+        </Router>
+      </div>
+
+      {/* Footer */}
+      {/* Your footer content goes here */}
     </div>
   );
 }
