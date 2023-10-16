@@ -7,6 +7,8 @@ import Home from './Home/Home';
 import About from './About/About';
 import Projects from './Projects/Projects';
 import Resume from './Resume/Resume';
+import AnimatedPageSlider from "./AnimatedPageSlider";
+import AnimatedBackground from "./AnimatedBackground";
 
 const NavBar = () => {
 
@@ -74,6 +76,8 @@ const NavLink = styled(Link)`
           <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>
+      <AnimatedPageSlider />
+      {/* <AnimatedBackground /> */}
     </Router>
   );
 };
